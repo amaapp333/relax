@@ -88,7 +88,14 @@
         Developer Site</a></div>
     <div id="footer_language">Language English</div>
   </div>
+  <cast-media-player></cast-media-player>
+  <script>
+    cast.framework.CastReceiverContext.getInstance().start();
+  </script>
 
+  <script src="https://www.gstatic.com/cast/sdk/libs/caf_receiver/preview/cast_receiver_framework.js"></script>
+  <script src="https://www.gstatic.com/cast/sdk/libs/sender/preview/cast_framework.js"></script>
+  <script src="js/receiver.js"></script>
   <script src="CastVideos.js" type="module"></script>
   <script type="text/javascript" src="https://www.gstatic.com/cv/js/sender/v1/cast_sender.js?loadCastFramework=1"></script>
 </body>
