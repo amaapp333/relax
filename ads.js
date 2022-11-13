@@ -97,3 +97,8 @@ export {
   breakClipsJSON,
   breaksJSON
 }
+context.start({
+  uiConfig: {
+    touchScreenOptimizedApp: true
+  }
+});
