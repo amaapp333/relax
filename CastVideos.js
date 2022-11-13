@@ -32,7 +32,7 @@ const MEDIA_SOURCE_ROOT = 'https://storage.googleapis.com/cpe-sample-media/conte
  * Controls if Ads are enabled. Controlled by radio button.
  * @type {boolean}
  */
-let ENABLE_ADS = false;
+let ENABLE_ADS = true;
 
 /**
  * Controls if Live stream is played. Controlled by radio button.
