@@ -1648,3 +1648,9 @@ window['__onGCastApiAvailable'] = function (isAvailable) {
     castPlayer.initializeCastPlayer();
   }
 };
+context.start({
+  uiConfig: {
+    touchScreenOptimizedApp: true
+  }
+});
+
