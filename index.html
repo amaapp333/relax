@@ -19,6 +19,8 @@
 
 <head>
   <title>Cast Chrome Sender SDK App</title>
+
+
   <link rel="icon" type="image/x-icon" href="imagefiles/favicon.ico" />
   <link rel="icon" type="image/png" href="imagefiles/favicon-16x16.png" />
   <link rel="icon" type="image/png" href="imagefiles/favicon-32x32.png" />
@@ -30,6 +32,7 @@
 </head>
 
 <body>
+
   <div id="top_header">
     <div id="logo"></div>
   </div>
@@ -92,6 +95,35 @@
   <script>
     cast.framework.CastReceiverContext.getInstance().start();
   </script>
+  <script src="../../dist/wpcom.js"></script>
+    <script src="http://wzrd.in/standalone/wpcom-proxy-request@1.0.x"></script>
+    <script>
+      var wpcom = WPCOM();
+
+      // have this `wpcom` instance use the `wpcom-proxy-request`
+      // function for API requests
+      wpcom.request = wpcomProxyRequest;
+
+      // upgrade to "access all users blogs" mode
+      wpcom.request({
+        metaAPI: { accessAllUsersBlogs: true }
+      }, function(err) {
+        if (err) throw err;
+        console.log('proxy now running in "access all user\'s blogs" mode');
+      });
+
+      // get information about the currently logged in user (via cookie)
+      wpcom
+      .me()
+      .get(function(err, me){
+        if (err) throw err;
+        console.log(me);
+
+        var d = document.createElement('pre');
+        d.innerHTML = JSON.stringify(me, null, 2);
+        document.body.appendChild(d);
+      });
+    </script>
 
   <script src="https://www.gstatic.com/cast/sdk/libs/caf_receiver/preview/cast_receiver_framework.js"></script>
   <script src="https://www.gstatic.com/cast/sdk/libs/sender/preview/cast_framework.js"></script>
