@@ -34,71 +34,60 @@
 </head>
 
 <body>
-  
+ 
 
 
-      <div id="skip">Skip To Consent</div>
+<div class="Test">
+  .
 
-      <div id="media_control">
+  <h1 class="Test-title"><a href="https://github.com/necolas/normalize.css">Opinionate.css</a>: UI tests</h1>
 
-      <div id="play"></div>
-      <div id="pause"></div>
-      <div id="audio_bg"></div>
-      <div id="audio_bg_track"></div>
-      <div id="audio_indicator"></div>
-      <div id="audio_bg_level"></div>
-      <div id="audio_on"></div>
-      <div id="audio_off"></div>
-
-      <div id="progress_bar_container">
-        <div id="progress_bg"></div>
-        <div id="seekable_window"></div>
-        <div id="progress"></div>
-        <div id="unseekable_overlay"></div>
-        <div id="progress_indicator"></div>
-      </div>
-
-      <div id="fullscreen_expand"></div>
-      <div id="fullscreen_collapse"></div>
-
-      <google-cast-launcher id="castbutton"></google-cast-launcher>
-
-      <div id="currentTime">00:00:00</div>
-      <div id="duration">00:00:00</div>
-      <img id="live_indicator">
-
-    </div>
+  <h2 class="Test-describe"><code>html</code></h2>
+  <h3 class="Test-it">should have sans-serif font family</h3>
+  <div class="Test-run">
+    abcdefghijklmnopqrstuvwxyz
   </div>
 
-  <div id="media_info">
-    <div id="media_title"></div>
-    <div id="feature_toggle_container">
-      <input type="radio" id="none" name="feature" value="none" checked>Skip<br>
-      <input type="radio" id="ads" name="feature" value="ads">Watch<br>
-      <input type="radio" id="live" name="feature" value="live">Live
-    </div>
-    <div id="media_subtitle"></div>
-    
+  <h2 class="Test-describe"><code>body</code></h2>
+  <h3 class="Test-it">should have no margin</h3>
+  <div class="Test-run">
+    (there should be no red background visible on this page)
+  </div>
 
-   <div id="carousel"></div>
+  <h2 class="Test-describe"><code>a</code></h2>
+  <h3 class="Test-it">should not have a focus outline when both focused and hovered</h3>
+  <div class="Test-run">
+    <a href="#non">dummy anchor</a>
+  </div>
+
+  <!-- KEEP -->
+  <h2 class="Test-describe"><code>button</code>, <code>input</code>, <code>optgroup</code>, <code>select</code>, <code>textarea</code></h2>
+  <h3 class="Test-it">should inherit <code>font-size</code> from ancestor</h3>
+  <div class="Test-run" style="font-size: 20px;">
+    <button>button</button><br>
+    <input value="input"><br>
+    <select style="border:1px solid #999;">
+      <optgroup label="optgroup">
+        <option>option</option>
+      </optgroup>
+      <option>option</option>
+    </select><br>
+    <textarea>textarea</textarea>
+  </div>
+
+  <h2 class="Test-describe"><code>fieldset</code></h2>
+  <h3 class="Test-it">should have consistent border, padding, and margin</h3>
+  <div class="Test-run">
+    <fieldset>
+      <div style="width:100%; height:100px; background:#ADD8E6;"></div>
+    </fieldset>
+  </div>
+
+</div> 
 
 
-
-
-    <div id="footer">
-    <div id="copyright">Copyright 2022 Maliek News. All Rights reserved.</div>
-    <div id="footer_content">Privacy Policy</div>
-    <div id="footer_language">Language English</div>
-    
-   </div>
-
-  <script src="http://wzrd.in/standalone/wpcom-proxy-request@1.0.x"></script>
-    
-  <script src="https://www.gstatic.com/cast/sdk/libs/caf_receiver/preview/cast_receiver_framework.js"></script>
-  <script src="https://www.gstatic.com/cast/sdk/libs/sender/preview/cast_framework.js"></script>
-  <script src="js/receiver.js"></script>
-  <script type="text/javascript" src="https://www.gstatic.com/cv/js/sender/v1/cast_sender.js?loadCastFramework=1"></script>
-
+      
+  
 
 
 </body>
