@@ -119,7 +119,7 @@ describe('h5bp', function() {
 					.create({ cors: true })
 					.start()
 					.request()
-					.get('/test.html')
+					.get('/index.html')
 					.expect('Access-Control-Allow-Origin', '*')
 					.expect(200, done);
 			});
@@ -260,7 +260,7 @@ describe('h5bp', function() {
 
 		it('should set Keep-Alive Header', function(done) {
 			helper.request()
-				.get('/test.html')
+				.get('/index.html')
 				.expect('connection', 'keep-alive')
 				.expect(200, done);
 		});
@@ -272,7 +272,7 @@ describe('h5bp', function() {
 					.create({ www: false })
 					.start()
 					.request()
-					.get('/test.html')
+					.get('/index.html')
 					.set('host', 'www.example.com')
 					.expect('location', '//example.com/test.html')
 					.expect(301, done);
@@ -288,8 +288,8 @@ describe('h5bp', function() {
 
 			it('should do nothing if not present', function(done) {
 				helper.request()
-					.get('/test.html')
-					.set('host', 'example.com')
+					.get('/index.html')
+					.set('host', 'adball.tech')
 					.expect(200, done);
 			});
 		});
@@ -301,9 +301,9 @@ describe('h5bp', function() {
 					.create({ www: true })
 					.start()
 					.request()
-					.get('/test.html')
-					.set('host', 'example.com')
-					.expect('location', '//www.example.com/test.html')
+					.get('/index.html')
+					.set('host', 'adball.tech')
+					.expect('location', '//www.adball.tech/index.html')
 					.expect(301, done);
 			});
 
@@ -317,8 +317,8 @@ describe('h5bp', function() {
 
 			it('should do nothing if present', function(done) {
 				helper.request()
-					.get('/test.html')
-					.set('host', 'www.example.com')
+					.get('/index.html')
+					.set('host', 'www.adball.tech')
 					.expect(200, function() {
 						helper
 							.stop()
@@ -410,7 +410,7 @@ describe('h5bp', function() {
 
 		it('should not advertise what kind of server we\'re running', function(done) {
 			helper.request()
-				.get('/test.html')
+				.get('/index.html')
 				.expect(200)
 				.end(function(err, res) {
 					res.headers.should.not.have.property('X-Powered-By');
@@ -420,7 +420,7 @@ describe('h5bp', function() {
 
 		it('should serve compressed files', function(done) {
 			helper.request()
-				.get('/test.html')
+				.get('/index.html')
 				.set('Accept-Encoding', 'gzip,deflate,sdch')
 				.expect('Vary', 'Accept-Encoding')
 				.expect('Content-Encoding', 'gzip')
